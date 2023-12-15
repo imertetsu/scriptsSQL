@@ -17,8 +17,24 @@
 -- Return the result table in any order.
 
 -- The result format is in the following example.
-Select c.name 
-From Customer c
-Where c.referee_id is null OR c.referee_id != 2;
+SELECT c.name 
+FROM Customer c
+WHERE c.referee_id IS NULL OR c.referee_id != 2;
 
 #Execercise 2:
+-- Table: Products
+
+-- +-------------+---------+
+-- | Column Name | Type    |
+-- +-------------+---------+
+-- | product_id  | int     |
+-- | low_fats    | enum    |
+-- | recyclable  | enum    |
+-- +-------------+---------+
+-- product_id is the primary key (column with unique values) for this table.
+-- low_fats is an ENUM (category) of type ('Y', 'N') where 'Y' means this product is low fat and 'N' means it is not.
+-- recyclable is an ENUM (category) of types ('Y', 'N') where 'Y' means this product is recyclable and 'N' means it is not.
+
+SELECT product_id 
+FROM Products
+WHERE low_fats = 'Y' AND recyclable = 'Y';
