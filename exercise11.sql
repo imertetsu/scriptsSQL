@@ -28,3 +28,8 @@
 -- Write a solution to report the name and bonus amount of each employee with a bonus less than 1000.
 
 -- Return the result table in any order.
+
+SELECT E.name, B.bonus
+FROM Employee E
+LEFT JOIN Bonus B ON E.empId = B.empId
+WHERE B.bonus IS NULL OR B.bonus < 1000;
